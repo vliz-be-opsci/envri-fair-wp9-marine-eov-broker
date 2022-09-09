@@ -6,6 +6,7 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [project]
+name = marine-eov-broker
 dependencies = [
   'pandas >= 1.3.4',
   'requests >= 2.26.0',
