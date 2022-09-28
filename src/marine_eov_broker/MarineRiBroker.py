@@ -143,6 +143,7 @@ class MarineBroker:
         sparql.setQuery(query_strings[eov])
         sparql.setReturnFormat(JSON)
         response = sparql.query().convert()
+        logging.info(f"Response: {response}")
         return response
 
     
