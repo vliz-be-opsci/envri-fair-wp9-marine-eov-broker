@@ -17,8 +17,8 @@ INPUT_DATE_FORMATS = ["%Y%m%dT%H%M%SZ", "%Y-%m-%dT%H:%M:%SZ",
                       "%Y%m%d", "%Y-%m-%d"]
 
 ERDDAP_OUTPUT_FORMATS = ["csv", "geoJson", "json", "nc", "ncCF", "odvTxt"]
-# EOV_LIST = ['EV_OXY', 'EV_SEATEMP', 'EV_SALIN', 'EV_CURR', 'EV_CHLA', 'EV_CO2', 'EV_NUTS']
-EOV_LIST = ['EV_OXY', 'EV_SEATEMP', 'EV_SALIN']
+EOV_LIST = ['EV_OXY', 'EV_SEATEMP', 'EV_SALIN', 'EV_CURR', 'EV_CHLA', 'EV_CO2', 'EV_NUTS']
+# EOV_LIST = ['EV_OXY', 'EV_SEATEMP', 'EV_SALIN']
 
 logger = logging.getLogger(__name__)
 
@@ -143,6 +143,7 @@ class MarineBroker:
         sparql.setQuery(query_strings[eov])
         sparql.setReturnFormat(JSON)
         response = sparql.query().convert()
+        logging.info(f"Response: {response}")
         return response
 
     
